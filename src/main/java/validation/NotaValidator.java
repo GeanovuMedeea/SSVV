@@ -3,17 +3,17 @@ import domain.Nota;
 
 public class NotaValidator implements Validator<Nota> {
     public void validate(Nota nota) throws ValidationException {
-        if (nota.getID().getObject1() == null || nota.getID().equals("")) {
-            throw new ValidationException("ID Student invalid! \n");
+        if (nota.getID().getObject1() == null || nota.getID().getObject1().isEmpty()) {
+            throw new ValidationException("ID Student invalid! Must be a non-empty String!\n");
         }
-        if (nota.getID().getObject2() == null || nota.getID().equals("")) {
-            throw new ValidationException("ID Tema invalid! \n");
+        if (nota.getID().getObject2() == null || nota.getID().getObject2().isEmpty()) {
+            throw new ValidationException("ID Tema invalid! Must be a non-empty String!\n");
         }
         if (nota.getNota() < 0 || nota.getNota() > 10) {
-            throw new ValidationException("Nota invalida! \n");
+            throw new ValidationException("Nota invalida! Must be a non-empty String!\n");
         }
         if (nota.getSaptamanaPredare() < 0) {
-            throw new ValidationException("Saptamana de predare invalida! \n");
+            throw new ValidationException("Saptamana de predare invalida! Must be a non-empty String!\n");
         }
     }
 }
