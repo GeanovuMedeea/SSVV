@@ -12,8 +12,8 @@ public class NotaValidator implements Validator<Nota> {
         if (nota.getNota() < 0 || nota.getNota() > 10) {
             throw new ValidationException("Nota invalida! Must be a non-empty String!\n");
         }
-        if (nota.getSaptamanaPredare() < 0) {
-            throw new ValidationException("Saptamana de predare invalida! Must be a non-empty String!\n");
+        if (nota.getSaptamanaPredare() < 0 || nota.getSaptamanaPredare() > 14) {
+            throw new ValidationException("Saptamana de predare invalida! \n");
         }
     }
 }
