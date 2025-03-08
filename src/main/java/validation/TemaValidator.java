@@ -3,10 +3,10 @@ import domain.Tema;
 
 public class TemaValidator implements Validator<Tema> {
     public void validate(Tema tema) throws ValidationException {
-        if (tema.getID() == null || tema.getID().equals("")) {
+        if (tema.getID() == null || tema.getID().isEmpty()) {
             throw new ValidationException("ID invalid! \n");
         }
-        if (tema.getDescriere() == null || tema.getDescriere().equals("")) {
+        if (tema.getDescriere() == null || tema.getDescriere().isEmpty()) {
             throw new ValidationException("Descriere invalida! \n");
         }
         if (tema.getDeadline() < 1 || tema.getDeadline() > 14 || tema.getDeadline() < tema.getStartline()) {
